@@ -1,0 +1,30 @@
+.outer_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27%;
+  border-radius: 100%;
+  box-shadow: inset 0px -8px rgba(0, 0, 0, 0.45);
+}
+
+.outer_circle-step2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 60%;
+  border-radius: 100%;
+  box-shadow: inset 0px -8px rgba(0, 0, 0, 0.45);
+  margin-bottom: 25px;
+}
+
+.inner_circle {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 75%;
+  border-radius: 100%;
+  box-shadow: inset 0px 8px rgba(0, 0, 0, 0.2);
+}
