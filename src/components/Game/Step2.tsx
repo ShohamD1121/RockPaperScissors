@@ -64,18 +64,19 @@ const Step2: React.FC = () => {
       (playerChoice === paperBgColor && houseChoice === rocksBgColor)
     ) {
       setScore((prev) => prev + 1);
+      localStorage.setItem("score", (score + 1).toString());
       return "YOU WIN!";
     } else {
       if (score > 0) {
         setScore((prev) => prev - 1);
       }
-
+      localStorage.setItem("score", (score - 1).toString());
       return "YOU LOSE!";
     }
   };
 
   const handleClick = () => {
-    localStorage.setItem("score", score.toString());
+    //localStorage.setItem("score", score.toString());
     window.location.reload();
   };
 
