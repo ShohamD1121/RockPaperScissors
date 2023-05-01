@@ -27,4 +27,30 @@
   height: 75%;
   border-radius: 100%;
   box-shadow: inset 0px 8px rgba(0, 0, 0, 0.2);
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .outer_circle {
+    width: 40%;
+  }
+
+  .outer_circle-step2 {
+    height: 50%;
+    width: 50%;
+    margin-bottom: 15px;
+  }
+
+  .inner_circle {
+    width: 75%;
+    height: 75%;
+    img {
+      width: 35px;
+    }
+  }
 }

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Rules.scss";
 import { Modal } from "@mui/material";
 import { Box } from "@mui/system";
 import RulesImage from "../../images/image-rules.svg";
+import "./Rules.scss";
 
 const Button: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -17,12 +17,13 @@ const Button: React.FC = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 400,
-            height: 350,
+            width: { xs: "65%", md: 400 },
+            height: { xs: 300, md: 350 },
             bgcolor: "white",
             backgroundImage: `url(${RulesImage})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center bottom 20%",
+            backgroundSize: "67%",
             borderRadius: "5px",
             boxShadow: 24,
             p: 4,
@@ -39,6 +40,3 @@ const Button: React.FC = () => {
 };
 
 export default Button;
-// background-repeat: no-repeat;
-// background-position: center;
-// background-size: 37.5%;

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "./Header.scss";
 import { GameContext } from "../../context/GameContext";
+import "./Header.scss";
 
 const Header: React.FC = () => {
   const { score } = useContext(GameContext);
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         </h1>
       </div>
       <div className="header_score">
-        <p className="header_score">SCORE</p>
+        <p>SCORE</p>
         <span>{score}</span>
       </div>
     </div>
