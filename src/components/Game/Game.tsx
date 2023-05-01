@@ -1,17 +1,11 @@
-import React, { useContext, useState } from "react";
-import Circle from "../Circle/Circle";
-import {
-  rockProperties,
-  paperProperties,
-  scissorsProperties,
-} from "../constants/constants";
-import "./Game.scss";
+import React, { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
+import "./Game.scss";
 
 const Game: React.FC = () => {
-  const { step, nextStep } = useContext(GameContext);
+  const { step } = useContext(GameContext);
 
   return (
     <div>

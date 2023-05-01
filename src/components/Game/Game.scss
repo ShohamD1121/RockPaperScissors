@@ -2,7 +2,7 @@
   background-image: url("../../images//bg-triangle.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 37.5%;
+  background-size: 37.5vh;
   width: 50%;
   height: 60vh;
   margin-top: 2.5rem;
@@ -72,6 +72,53 @@
       border: none;
       border-radius: 12px;
       font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .game {
+    background-size: 75%;
+    width: 80%;
+    height: 40vh;
+    margin-top: 1.5rem;
+  }
+
+  .top {
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    height: 50%;
+  }
+
+  .bottom {
+    height: 50%;
+  }
+
+  .game-step2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 85%;
+    height: 85vh;
+    margin-top: 1.5rem;
+
+    .choosen {
+      font-size: 10px;
+      height: 75%;
+    }
+    .empty-circle {
+      height: 45%;
+      width: 45%;
+      margin-bottom: 20px;
+    }
+    .result {
+      grid-column: 1 / span 2;
+      margin-right: 60px;
+      margin-left: 60px;
+      button {
+        height: 2.5rem;
+        font-size: 12px;
+      }
     }
   }
 }

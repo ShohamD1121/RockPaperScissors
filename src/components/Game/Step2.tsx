@@ -9,6 +9,7 @@ import {
   paperBgColor,
   rocksBgColor,
 } from "../constants/constants";
+import useCurrentWidth from "../../hooks/useCurrentWidth";
 
 interface Choice {
   background: string;
@@ -30,6 +31,7 @@ const Step2: React.FC = () => {
   });
   const [result, setResult] = useState("");
   const [showResult, setShowResult] = useState(false);
+  const currentWidth = useCurrentWidth();
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -76,7 +78,6 @@ const Step2: React.FC = () => {
   };
 
   const handleClick = () => {
-    //localStorage.setItem("score", score.toString());
     window.location.reload();
   };
 
@@ -86,7 +87,7 @@ const Step2: React.FC = () => {
         <h1>YOU PICKED</h1>
         <Circle circleProperties={choosenCircle} />
       </div>
-      {showResult && (
+      {currentWidth > 768 && showResult && (
         <div className="result">
           <h1>{result}</h1>
           <button onClick={handleClick}>PLAY AGAIN</button>
@@ -100,6 +101,12 @@ const Step2: React.FC = () => {
           <Circle circleProperties={houseCircle} />
         )}
       </div>
+      {currentWidth < 768 && showResult && (
+        <div className="result">
+          <h1>{result}</h1>
+          <button onClick={handleClick}>PLAY AGAIN</button>
+        </div>
+      )}
     </div>
   );
 };
