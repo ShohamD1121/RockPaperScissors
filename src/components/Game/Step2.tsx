@@ -36,7 +36,7 @@ const Step2: React.FC = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setHouseCircle(getRandomChoice(choices));
-    }, 2000);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutId);
@@ -51,7 +51,7 @@ const Step2: React.FC = () => {
           determineWinner(choosenCircle.background, houseCircle.background)
         );
       }
-    }, 1000);
+    }, 500);
     return () => {
       clearTimeout(timeoutId);
     };
@@ -71,8 +71,9 @@ const Step2: React.FC = () => {
     } else {
       if (score > 0) {
         setScore((prev) => prev - 1);
+        localStorage.setItem("score", (score - 1).toString());
       }
-      localStorage.setItem("score", (score - 1).toString());
+
       return "YOU LOSE!";
     }
   };
@@ -101,10 +102,10 @@ const Step2: React.FC = () => {
           <Circle circleProperties={houseCircle} />
         )}
       </div>
-      {currentWidth < 768 && showResult && (
+      {currentWidth < 768 && (
         <div className="result">
           <h1>{result}</h1>
-          <button onClick={handleClick}>PLAY AGAIN</button>
+          {showResult && <button onClick={handleClick}>PLAY AGAIN</button>}
         </div>
       )}
     </div>
