@@ -88,7 +88,7 @@ const Step2: React.FC = () => {
         <h1>YOU PICKED</h1>
         <Circle circleProperties={choosenCircle} />
       </div>
-      {currentWidth > 768 && showResult && (
+      {currentWidth >= 768 && showResult && (
         <div className="result">
           <h1>{result}</h1>
           <button onClick={handleClick}>PLAY AGAIN</button>
